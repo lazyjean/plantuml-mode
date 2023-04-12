@@ -250,7 +250,7 @@
     (save-match-data
       (with-temp-buffer
         (call-process plantuml-java-command nil t nil "-XshowSettings:properties" "-version")
-        (re-search-backward "java.version = \\(1.\\)?\\([[:digit:]]+\\)")
+        (re-search-backward "java.version = \\(1.\\)?\\([0-9.]+\\)")
         (string-to-number (match-string 2))))))
 
 (defun plantuml-jar-get-language (buf)
